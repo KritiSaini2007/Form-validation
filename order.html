@@ -1,0 +1,60 @@
+<html>
+    <head>
+       
+        <title>form validation</title>
+        
+         </head>
+    <style>
+        .container{
+            display:flex;
+            display:inline;
+            justify-content:center;
+            align-items:center;
+        }
+            #button{
+                background-color: green;
+            }
+    </style>
+    <body>
+        <form action="submit.html" autocomplete="off" onsubmit="return validation()">
+             <table align="center" >
+            <tr><td><input type="text" id="0" placeholder="USERNAME">
+           <br> </td></tr>
+            <tr><td><input type="password" id="1" placeholder="PASSWORD">
+            <br>  </td></tr>
+            <tr><td><input type="text" id="2" placeholder="CONFIRM PASSWORD">
+            <br> </td></tr>
+            <tr><td><input type="email" id="3" placeholder="EMAIL">
+            <br> </td></tr>
+            <tr><td><input type="number" id="4" placeholder="MOBILE">
+            <br> </td></tr>
+            <br>
+            <tr><td><input id="button" type="submit" value="Submit your data"></td></tr>
+    </form>
+    <script type="text/javascript">
+        function validation() {
+            var user = document.getElementById('0').value;
+            var password= document.getElementById('1').value;
+            var confirm= document.getElementById('2').value;
+            var email = document.getElementById('3').value;
+            var mobile = document.getElementById('4').value;
+        if(user==""||password==""||confirm==""||email==""||mobile==""){
+      alert("all field are mandatory!!");
+      return false;
+      }     
+      else if(password!=confirm){
+        alert("this password should match the confirm password")
+       return false;
+      }
+      else if(mobile.length<10||mobile.length>10){
+        alert("Please Enter only 10 digits")
+        return false;
+      }
+      else{
+        true;
+      }
+        }
+
+    </script>
+</body>
+</html>
